@@ -3,8 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 </head>
 <body>
+
+<div id="root">
+
+</div>
+
+<script !src="">
+    // React
+    const postItem = React.createElement(
+        'div',
+        {
+            className: 'post-item'
+        },
+        React.createElement(
+            'h2',
+            {
+                title: 'How to learn React'
+            },
+            'Learn React'
+        ),
+        React.createElement(
+            'p',
+            null,
+            "Learn reactjs in F8"
+        )
+    )
+
+    // root element
+    const root = document.getElementById('root')
+
+    // React DOM render UI
+    ReactDOM.render(postItem, root)
+
+</script>
 
 </body>
 </html>
