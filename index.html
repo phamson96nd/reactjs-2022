@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+<div id="root"></div>
+<script type="text/babel">
+    const courses = [
+        {name: 'HTML, CSS'},
+        {name: 'PHP'},
+        {name: 'MySQL'},
+        {name: 'AWS'},
+    ]
+
+    const jsx = (
+        <ul>
+            {courses.map(course =>
+                <li>{course.name}</li>
+            )}
+        </ul>
+    )
+    const jsxFragment = (
+        <React.Fragment>
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+        </React.Fragment>
+    )
+    ReactDOM.render(jsx, document.getElementById('root'))
+    ReactDOM.render(jsxFragment, document.getElementById('root'))
+
+</script>
+</body>
+</html>
