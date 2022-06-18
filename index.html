@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
 </head>
 <body>
 
@@ -10,15 +11,7 @@
 
 </div>
 <script>
-    const root = document.getElementById('root')
-    const h1 = document.createElement('h1')
-    h1.innerText = 'hello world!'
-    h1.id = 'heading'
-    h1.className = 'title'
-    h1.style = 'color : green; font-size : 30px;'
-
-    // document.body.appendChild(h1)
-    root.appendChild(h1)
+    console.log(React.version)
 </script>
 
 </body>
