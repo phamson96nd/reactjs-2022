@@ -11,7 +11,41 @@
 
 </div>
 <script>
-    console.log(React.version)
+    // DOM
+    const h1DOM = document.createElement('h1')
+
+    h1DOM.title = "Hello"
+    h1DOM.className = "heading"
+    h1DOM.innerText = "Hello guys!"
+
+    document.body.appendChild(h1DOM)
+
+    // React
+    const h1React = React.createElement('h1', {
+        title: 'Hello React',
+        className: 'heading'
+    }, 'Hello guys!')
+
+    // DOM example ul li
+    const ulDOM = document.createElement('ul')
+    const liDOM1 = document.createElement('li')
+    const liDOM2 = document.createElement('li')
+
+    liDOM1.innerText = 'JS'
+    liDOM2.innerText = 'PHP'
+
+    ulDOM.appendChild(liDOM1)
+    ulDOM.appendChild(liDOM2)
+
+    document.body.appendChild(ulDOM)
+
+    // React ul, li
+    const ulReact = React.createElement('ul', null,
+        React.createElement('li', null, 'JS'),
+        React.createElement('li', null, 'PHP')
+    )
+
+    console.log(ulReact)
 </script>
 
 </body>
