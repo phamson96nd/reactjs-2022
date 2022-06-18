@@ -13,28 +13,39 @@
 
 </div>
 <script type="text/babel">
-    function Header() {
+
+    function Button({title, href, onClick}) {
+        let Component = 'button'
+        let props = {}
+
+        if(href) {
+            Component = 'a'
+            props.href = href
+        }
+        if(onClick) {
+            props.onClick = onClick
+        }
         return (
-            <div className="header">Header</div>
+            <Component {...props}>{title}</Component>
         )
     }
 
-    class Content extends React.Component {
-        render() {
-            return (
-                <div className="content">Content</div>
-            )
-        }
+    function App() {
+        const test = true
+        return (
+            <div id="wrapper">
+                <h1>{'Pham son' && test}</h1>
+
+                <Button
+                    title="Click me!"
+                    // href="fb.com"
+                    onClick={() => console.log(Math.random())}
+                />
+            </div>
+        )
     }
 
-    const app = (
-        <div className="wrapper">
-            <Header />
-            <Content />
-            <div className="footer">Footer</div>
-        </div>
-    )
-    ReactDOM.render(app, document.getElementById('app'))
+    ReactDOM.render(<App />, document.getElementById('app'))
 </script>
 </body>
 </html>
