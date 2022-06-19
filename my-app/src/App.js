@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from "react";
+
 
 function App() {
+  const [job, setJob] = useState('')
+  const [jobs, setJobs] = useState([])
+
+  const handleSubmit = () => {
+    setJobs(prevState => {
+      return [...prevState, job]
+    })
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input
+        value={job}
+        onChange={(e) => setJob(e.target.value)}
+        type="text"
+      />
+      <button onClick={handleSubmit}>Add</button>
+
+      <ul>
+        {jobs.map((job, index) => (
+          <li key={index}>{job}</li>
+        ))}
+      </ul>
     </div>
   );
 }
